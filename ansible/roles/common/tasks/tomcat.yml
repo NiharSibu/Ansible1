@@ -6,10 +6,10 @@
   - name: Extract Tomcat
     command: "tar zxf {{ download_path }}/tomcat.tar.gz  -C {{ tomcat_path }} --strip-components 1"
    
-  - name: Remove ROOT folder initially
+  - name: Remove ROOT folder
     command: rm -rf {{ clear_webapps }}
     
-  - name: Copy bikes Project War Files
+  - name: Copy petclinic War Files
     copy: src=templates/app/{{ petclinic_war }} dest={{ tomcat_path }}/webapps/ROOT.war mode=0644
     notify: 
     - Restart Tomcat

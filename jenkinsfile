@@ -9,8 +9,7 @@ node {
             "pattern": "petclinic/petclinic.war",
             "target": "ansible/templates/app/" }]
         }"""
-    server.download(downloadSpec)  
-  sh label: 'Jenkins', script: "echo '<h1> TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>' > ansible/templates/app/index.html"
+    server.download(downloadSpec) 
  }
   def project_ansible="ansible"
   dir(project_ansible) { 

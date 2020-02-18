@@ -10,6 +10,6 @@
     command: rm -rf {{ clear_webapps }}
     
   - name: Copy bikes Project War Files
-    copy: src=/root/.jenkins/workspace/production/ansible/warstorage/{{ petclinic_war }} dest={{ tomcat_path }}/webapps/ROOT.war mode=0644
+    copy: src=../../../templates/app/{{ petclinic_war }} dest={{ tomcat_path }}/webapps/ROOT.war mode=0644
     notify: 
     - Restart Tomcat
